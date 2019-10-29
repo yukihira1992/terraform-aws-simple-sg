@@ -7,7 +7,7 @@ Terraform module which creates Security Group on AWS.
 # Web server allows all http/https traffic.
 
 module "web_server" {
-  source = "yukihira1992/aws/simple-sg"
+  source = "yukihira1992/simple-sg/aws"
 
   tags = {
     Name = "web-server"
@@ -33,7 +33,7 @@ module "web_server" {
 # DB server only allows mysql access from Web server.
 
 module "db_server" {
-  source = "yukihira1992/aws/simple-sg"
+  source = "yukihira1992/simple-sg/aws"
 
   tags = {
     Name = "db-server"
