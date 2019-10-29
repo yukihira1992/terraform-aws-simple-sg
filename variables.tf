@@ -18,7 +18,6 @@ variable "description" {
 
 variable "ingress_rules" {
   description = "A list of ingress rule mappings."
-  type = "list"
 }
 
 variable "egress_rules" {
@@ -29,7 +28,6 @@ variable "egress_rules" {
       protocol = "-1"
     }
   ]
-  type = "list"
 }
 
 variable "vpc_id" {
