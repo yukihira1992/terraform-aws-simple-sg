@@ -18,12 +18,12 @@ variable "description" {
 
 variable "ingress_rules" {
   description = "A list of ingress rule mappings."
-  type = list(object({}))
+  type = list(any)
 }
 
 variable "egress_rules" {
   description = "A list of eggress rule mappings. Defaults to allow all traffic."
-  type = list(object({}))
+  type = list(any)
   default = [
     {
       port = 0
@@ -45,5 +45,5 @@ variable "vpc_id" {
 variable "tags" {
   description = "A mapping of tags to assign to the resource."
   default = {}
-  type = object({})
+  type = map(string)
 }
