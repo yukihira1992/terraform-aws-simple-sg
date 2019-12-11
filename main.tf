@@ -27,7 +27,7 @@ resource "aws_security_group" "this" {
     for_each = [for rule in var.egress_rules: {
       from_port = lookup(rule, "from_port", lookup(rule, "port", 0))
       to_port = lookup(rule, "to_port", lookup(rule, "port", 0))
-      protocol = lookup(rule, "protocol", "tcp")
+      protocol = lookup(rule, "protocol", "-1")
       cidr_blocks = lookup(rule, "cidr_blocks", [
         "0.0.0.0/0",
       ])
