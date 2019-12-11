@@ -58,10 +58,10 @@ module "db_server" {
 | name | The name of the security group. | string | `null` | no |
 | name_prefix | Creates a unique name beginning with the specified prefix. Conflicts with name. | string | `null` | no |
 | description | The security group description. | string | `null` | no |
-| ingress_rules | A list of ingress rule mappings. | list(map(string)) | | yes |
-| egress_rules | A list of eggress rule mappings. Defaults to allow all traffic. | list(map(string)) | Allow all traffic. | no |
+| ingress_rules | A list of ingress rule mappings. | list(object({})) | | yes |
+| egress_rules | A list of eggress rule mappings. Defaults to allow all traffic. | list(object({})) | Allow all traffic. | no |
 | vpc_id | The VPC ID | string | `null` | no |
-| tags | A mapping of tags to assign to the resource. | map(string) | `{}` | no |
+| tags | A mapping of tags to assign to the resource. | object({}) | `{}` | no |
 
 ## Outputs
 
